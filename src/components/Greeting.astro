@@ -1,0 +1,26 @@
+---
+import { getEntry } from 'astro:content';
+import { Image } from 'astro:assets';
+import { OWNER_NAME } from '../data/site';
+import tarot0 from '../assets/images/tarot/tarot_majar_arcana_0.webp';
+import SectionContainer from './SectionContainer.astro'; // 読み込み
+
+const greetingData = (await getEntry('home', 'greeting'))!;
+const content = greetingData.data.content.replace('{NAME}', OWNER_NAME);
+const { title } = greetingData.data;
+---
+
+<section class="relative py-24 bg-base-1 overflow-hidden">
+  <div class="absolute top-10 right-10 w-40 opacity-10 rotate-12 pointer-events-none">
+    <Image src={tarot0} alt="" />
+  </div>
+
+  {/* 共通の最大幅ルールを適用 */}
+  <SectionContainer class="flex flex-col items-center text-center space-y-8">
+    <h2 class="text-3xl font-serif text-main-1">{title}</h2>
+    <p class="text-black-1 font-serif text-lg leading-relaxed whitespace-pre-line">
+      {content}
+    </p>
+    <div class="w-16 h-px bg-main-1 opacity-50"></div>
+  </SectionContainer>
+</section>

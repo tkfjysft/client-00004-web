@@ -1,0 +1,25 @@
+@import "tailwindcss";
+
+@theme {
+  --color-base-1: #FFFDF9;
+  --color-main-1: #C1775A;
+  --color-accent-1: #8BAB2E;
+  --color-black-1: #5D5B57;
+  --color-white-1: #FCFBFB;
+  
+  --font-sans: "Noto Sans JP", sans-serif;
+  --font-serif: "Noto Serif JP", serif;
+}
+
+@layer base {
+  body {
+    @apply bg-base-1 text-black-1 font-sans font-light leading-relaxed;
+  }
+  h1, h2, h3 {
+    @apply font-serif font-light text-main-1;
+  }
+}
+
+body {
+  @apply bg-base-1 text-black-1 font-sans font-light leading-relaxed overflow-x-hidden;
+}

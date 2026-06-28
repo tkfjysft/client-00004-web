@@ -1,0 +1,8 @@
+{
+  "copyright": "© 2026 {NAME}. All Rights Reserved.",
+  "links": [
+    { "name": "鑑定メニュー", "url": "#services" },
+    { "name": "お客様の声", "url": "#testimonials" },
+    { "name": "よくあるご質問", "url": "#faq" }
+  ]
+}

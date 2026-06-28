@@ -1,0 +1,34 @@
+---
+import { getEntry } from 'astro:content';
+import SectionContainer from './SectionContainer.astro';
+
+const flowData = (await getEntry('home', 'flow'))!;
+const { title, steps } = flowData.data;
+---
+
+<section class="py-24 bg-base-1">
+  <SectionContainer>
+    <h2 class="text-3xl font-serif text-main-1 text-center mb-16">{title}</h2>
+    
+    <div class="grid md:grid-cols-4 gap-8">
+      {steps.map((item, index) => (
+        <div class="relative flex flex-col items-center text-center">
+          {/* ステップ番号のデザイン */}
+          <div class="w-16 h-16 rounded-full bg-white-1 border border-main-1 flex items-center justify-center text-2xl font-serif text-main-1 mb-6 shadow-sm">
+            {item.step}
+          </div>
+          
+          <h3 class="text-xl font-bold mb-3">{item.name}</h3>
+          <p class="text-base text-black-1/80 leading-relaxed">
+            {item.description}
+          </p>
+
+          {/* 最後のステップ以外に矢印を表示（PC時のみ） */}
+          {index < steps.length - 1 && (
+            <div class="hidden md:block absolute top-8 left-[60%] w-full h-px border-t-2 border-dashed border-main-1/30 -z-10"></div>
+          )}
+        </div>
+      ))}
+    </div>
+  </SectionContainer>
+</section>

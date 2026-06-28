@@ -1,0 +1,48 @@
+---
+import { getEntry } from 'astro:content';
+import { Image } from 'astro:assets';
+import profileImage from '../assets/images/owner/face_owner.webp';
+import SectionContainer from './SectionContainer.astro';
+import { OWNER_NAME } from '../data/site'; // site.tsから名前を取得
+
+const data = await getEntry('home', 'profile');
+if (!data) throw new Error("profile.jsonが見つかりません");
+
+const { title, text, tags } = data.data as {
+  title: string;
+  text: string;
+  tags: string[];
+};
+---
+
+<section class="py-24 bg-base-1/30">
+  <SectionContainer>
+    <h2 class="text-3xl font-serif text-main-1 text-center mb-16">{title}</h2>
+    
+    <div class="flex flex-col md:flex-row items-center gap-12 max-w-4xl mx-auto">
+      {/* 写真エリア（今はプレースホルダー） */}
+      <div class="w-64 h-64 md:w-80 md:h-80 bg-base-1 rounded-full flex-shrink-0 border-4 border-white-1 shadow-md">
+        <Image 
+          src={profileImage} 
+          alt="占い師顔写真" 
+          class="rounded-3xl shadow-xl w-full h-auto object-cover max-h-[500px]" 
+        />
+      </div>
+      
+      {/* 紹介テキストエリア */}
+      <div>
+        <h3 class="text-2xl font-bold text-main-1 mb-6">{OWNER_NAME}</h3>
+        <p class="text-base text-black-1/80 leading-relaxed whitespace-pre-line mb-8">
+          {text}
+        </p>
+        <div class="flex flex-wrap gap-3">
+          {tags.map((tag) => (
+            <span class="px-4 py-1 border border-main-1 text-main-1 rounded-full text-sm">
+              {tag}
+            </span>
+          ))}
+        </div>
+      </div>
+    </div>
+  </SectionContainer>
+</section>

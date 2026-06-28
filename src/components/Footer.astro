@@ -1,0 +1,24 @@
+---
+import { OWNER_NAME } from '../data/site';
+import SectionContainer from './SectionContainer.astro';
+
+// コピーライトの置換
+const copyright = "© 2026 " + OWNER_NAME + ". All Rights Reserved.";
+---
+
+<footer class="py-12 bg-base-1 border-t border-base-2">
+  <SectionContainer class="flex flex-col md:flex-row justify-between items-center gap-6">
+    <div class="text-xl font-serif text-main-1 font-bold">
+      {OWNER_NAME}
+    </div>
+
+    <nav class="flex gap-8">
+      <a href="#services" class="text-base text-black-1/70 hover:text-main-1 transition-colors">メニュー</a>
+      <a href="#faq" class="text-base text-black-1/70 hover:text-main-1 transition-colors">FAQ</a>
+    </nav>
+
+    <p class="text-sm text-black-1/50">
+      {copyright}
+    </p>
+  </SectionContainer>
+</footer>

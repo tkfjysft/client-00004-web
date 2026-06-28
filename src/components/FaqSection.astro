@@ -1,0 +1,32 @@
+---
+import { getEntry } from 'astro:content';
+import SectionContainer from './SectionContainer.astro';
+
+const data = await getEntry('home', 'faq');
+if (!data) throw new Error("faq.jsonが見つかりません");
+
+const { title, questions } = data.data as {
+  title: string;
+  questions: { q: string; a: string }[];
+};
+---
+
+<section class="py-24 bg-white-1">
+  <SectionContainer>
+    <h2 class="text-3xl font-serif text-main-1 text-center mb-16">{title}</h2>
+    
+    <div class="max-w-3xl mx-auto space-y-4">
+      {questions.map((item) => (
+        <details class="group border border-base-1 rounded-2xl p-6 hover:border-main-1 transition-colors">
+          <summary class="text-base font-bold text-main-1 cursor-pointer flex justify-between items-center list-none">
+            {item.q}
+            <span class="group-open:rotate-180 transition-transform">▼</span>
+          </summary>
+          <p class="text-base text-black-1/80 mt-4 leading-relaxed pt-4 border-t border-base-1">
+            {item.a}
+          </p>
+        </details>
+      ))}
+    </div>
+  </SectionContainer>
+</section>
