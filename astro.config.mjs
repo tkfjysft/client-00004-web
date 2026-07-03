@@ -5,7 +5,7 @@ import tailwindcss from '@tailwindcss/vite';
 
 // https://astro.build/config
 export default defineConfig({
-//   base: process.env.VERCEL ? '/d/' : '/',
+  base: '/',
   vite: {
     plugins: [tailwindcss()]
   }
