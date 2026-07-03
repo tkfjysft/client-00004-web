@@ -1,8 +1,6 @@
 {
   "rewrites": [
-    {
-      "source": "/d/:path*",
-      "destination": "/:path*"
-    }
-  ]
+    { "source": "/d/(.*)", "destination": "/$1" }
+  ],
+  "cleanUrls": true
 }
