@@ -1,7 +1,7 @@
 ---
 import { getEntry } from 'astro:content';
 import SectionContainer from './SectionContainer.astro';
-import { Clock, Sparkles, Heart, CircleCheck } from 'lucide-astro'; // アイコンをより占いに近いものへ
+import { Clock, Sparkles, Heart, CircleCheck } from 'lucide-astro'; 
 
 const serviceData = await getEntry('home', 'service');
 if (!serviceData) throw new Error("service.jsonが見つかりません");
@@ -20,7 +20,6 @@ const { title, description, items } = serviceData.data;
       {items.map((item, index) => (
         <div class="group p-8 border border-main-1/10 rounded-2xl bg-white shadow-sm hover:shadow-xl hover:border-main-1/30 transition-all duration-500 flex flex-col relative overflow-hidden">
           
-          {/* 上品なコーナーアクセント */}
           <div class="absolute top-0 right-0 p-4 opacity-20">
             <Sparkles class="w-8 h-8 text-main-1" />
           </div>

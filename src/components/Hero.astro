@@ -10,16 +10,13 @@ const { heroTitle, heroSub, heroDescription, buttonText } = heroData.data;
 
 <section class="relative w-full min-h-screen flex items-center justify-center px-6 py-20 md:py-40 bg-base-1 overflow-hidden">
 
-  {/* 装飾コンテナ */}
   <div class="absolute inset-0 w-full h-full pointer-events-none">
     <div class="absolute -top-10 -left-10 w-80 h-80 bg-main-1/30 rounded-full blur-[100px]"></div>
     <div class="absolute bottom-10 right-0 w-70 h-70 bg-accent-1/30 rounded-full blur-[100px]"></div>
   </div>
 
-  {/* flex-col-reverse でモバイルは写真が上に、md以上で左写真・右テキストに */}
 <div class="relative z-10 w-full max-w-[1200px] flex flex-col md:flex-row items-center gap-8 lg:gap-16">
     
-    {/* 1. 写真エリア（先に記述することで、モバイルでは上に来る） */}
     <div class="flex-1 w-full relative px-4 md:px-0">
       <div class="hidden md:block absolute -top-3 -right-3 w-full h-full border border-main-1/20 rounded-3xl -z-10"></div>
       
@@ -30,7 +27,6 @@ const { heroTitle, heroSub, heroDescription, buttonText } = heroData.data;
       />
     </div>
 
-    {/* 2. テキストエリア（後に記述することで、モバイルでは下に来る） */}
     <div class="flex-1 space-y-6 md:space-y-8 text-center md:text-left">
       <div class="space-y-4">
         <p class="text-main-1 font-serif tracking-widest uppercase text-sm md:text-base font-semibold">{heroSub}</p>

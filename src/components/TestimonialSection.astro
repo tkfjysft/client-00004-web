@@ -1,7 +1,7 @@
 ---
 import { getEntry } from 'astro:content';
 import SectionContainer from './SectionContainer.astro';
-import { Quote, User } from 'lucide-astro'; // Userアイコンを追加
+import { Quote, User } from 'lucide-astro'; 
 
 const reviewData = await getEntry('home', 'testimonials');
 if (!reviewData) throw new Error("reviews.jsonが見つかりません");
@@ -26,7 +26,6 @@ const { title, reviews } = reviewData.data;
           </p>
 
           <div class="border-t border-main-1/10 pt-6 flex items-center gap-4">
-            {/* 丸枠に入った人型アイコン */}
             <div class="w-12 h-12 rounded-full bg-main-1/5 flex items-center justify-center border border-main-1/20">
               <User class="w-6 h-6 text-main-1/60" />
             </div>

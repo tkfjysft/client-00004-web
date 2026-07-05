@@ -1,7 +1,6 @@
 @import "tailwindcss";
 
 :root {
-  /* ここに共通変数を置く */
   --color-base-1: #FFFDF9;
   --color-main-1: #ea7c50;
   --color-accent-1: #97c609;
@@ -38,7 +37,7 @@ body {
 
 
 body {
-  overflow-y: scroll; /* 常にスクロールバーを表示 */
+  overflow-y: scroll; 
 }
 
 

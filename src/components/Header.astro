@@ -29,7 +29,6 @@ const getIcon = (name: string) => {
         })}
     </nav>
 
-    {/* 【魔法のボタン】detailsタグでアコーディオンを実装 */}
     <details class="xl:hidden relative">
       <summary class="list-none p-2 text-main-1 cursor-pointer">
         <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -37,7 +36,6 @@ const getIcon = (name: string) => {
         </svg>
       </summary>
       
-      {/* メニューの中身 */}
       <div class="absolute right-0 top-12 w-64 bg-white-1 border border-base-1 p-6 rounded-lg shadow-xl">
         <ul class="flex flex-col gap-4">
           {NAV_ITEMS.map((item) => (
