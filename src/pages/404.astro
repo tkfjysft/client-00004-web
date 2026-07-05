@@ -1,0 +1,32 @@
+---
+// src/pages/404.astro
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Link from '../components/Link.astro';
+---
+
+<BaseLayout title="ページが見つかりません | YUKI TAROT">
+  <div class="relative w-full min-h-screen flex items-center justify-center px-6 py-20 md:py-40 bg-base-1 overflow-hidden">
+      <div class="relative z-10 text-center">
+        <p class="text-clr-primary-1 font-mono text-xs tracking-[0.3em] uppercase mb-4">
+          Status: 404
+        </p>
+        
+        <h1 class="text-clr-base-1 text-2xl sm:text-3xl font-bold tracking-wider mb-6 uppercase">
+          Frontend Demo Site
+        </h1>
+        
+        <p class="text-clr-base-1/70 text-sm leading-relaxed tracking-widest mb-12 text-left sm:text-left bg-white/50 p-8 mb-8">
+          当サイトはフロントエンドの実装サンプル（ポートフォリオ）として制作しているため、現在はトップページのみの実装となっております。<br class="hidden sm:inline" />
+          メインのコンポーネントやアニメーションの挙動は、ぜひトップページにてご覧ください。
+        </p>
+
+
+        <Link 
+          href="/"
+          class="inline-block bg-clr-main-1 border border-clr-base-1/20 hover:border-clr-primary-1 text-clr-wh-1 text-xs font-mono tracking-[0.2em] uppercase px-8 py-4 transition-all duration-300 hover:scale-105 active:scale-95 shadow-[0_0_20px_rgba(var(--clr-primary-1-rgb),0.05)]"
+        >
+          Return to Home View
+        </Link>
+      </div>
+  </div>
+</BaseLayout>

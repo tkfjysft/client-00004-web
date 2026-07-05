@@ -35,3 +35,11 @@
 body {
   @apply bg-base-1 text-black-1 font-sans font-light leading-relaxed overflow-x-hidden;
 }
+
+
+body {
+  overflow-y: scroll; /* 常にスクロールバーを表示 */
+}
+
+
+

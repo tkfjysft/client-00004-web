@@ -11,7 +11,7 @@ if (!data) throw new Error("profile.jsonが見つかりません");
 const { title, text, tags } = data.data;
 ---
 
-<section class="py-24 bg-white-1">
+<section class="bg-white-1 py-80">
   <SectionContainer>
     <div class="text-center mb-20">
       <h2 class="text-4xl md:text-5xl font-serif text-main-1">{title}</h2>
@@ -41,10 +41,10 @@ const { title, text, tags } = data.data;
         </p>
 
         {/* タグエリア：text-base以上でデザイン */}
-        <div class="flex flex-wrap gap-4 pt-4">
+<div class="flex flex-wrap gap-3 pt-4">
           {tags.map((tag) => (
-            <span class="px-6 py-2 border border-main-1/20 bg-main-1/5 text-main-1 rounded-full text-base font-medium">
-              {tag}
+            <span class="px-4 py-1.5 rounded-full bg-main-1/5 border border-main-1/20 text-clr-main-1 text-sm font-medium transition-all hover:bg-clr-main-1/10 hover:border-clr-main-1/40 cursor-default">
+              #{tag}
             </span>
           ))}
         </div>

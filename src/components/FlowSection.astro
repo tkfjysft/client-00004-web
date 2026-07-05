@@ -6,7 +6,7 @@ const flowData = await getEntry('home', 'flow');
 const { title, steps } = flowData.data;
 ---
 
-<section class="py-24 bg-white">
+<section class="bg-white py-80">
   <SectionContainer>
     <div class="text-center mb-20">
       <h2 class="text-4xl md:text-5xl font-serif text-main-1">{title}</h2>
@@ -22,7 +22,7 @@ const { title, steps } = flowData.data;
           </div>
           
           <h3 class="text-2xl font-serif font-bold text-black-1 mb-4">{item.name}</h3>
-          <p class="text-lg text-black-1/70 leading-relaxed max-w-xs">
+          <p class="text-lg text-black-1/70 leading-relaxed max-w-xs text-left">
             {item.description}
           </p>
 

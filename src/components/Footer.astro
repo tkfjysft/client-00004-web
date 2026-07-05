@@ -35,7 +35,7 @@ const copyright = footerData.data.copyright.replace('{NAME}', SITE_TITLE);
       
       {/* 左側：サイト情報 */}
       <div class="space-y-8">
-        <h2 class="text-3xl font-serif text-white-1 font-bold">{SITE_TITLE}</h2>
+        <h2 class="text-2xl font-serif text-white-1 font-bold">{SITE_TITLE}</h2>
         <div class="space-y-3 text-base text-white-1 leading-relaxed">
           <p>〒{POST_CODE}<br />{ADDRESS}</p>
           <p>電話番号：{TEL}</p>
@@ -53,7 +53,7 @@ const copyright = footerData.data.copyright.replace('{NAME}', SITE_TITLE);
           const Icon = getIcon(link.icon);
           return (
             <Link href={link.url} class="flex items-center gap-2 text-base text-white-1 hover:text-accent-1 transition-colors">
-              {Icon && <Icon class="w-4 h-4 text-accent-1" />}
+              {Icon && <Icon class="w-4 h-4 text-white-1/50" />}
               <span>{link.name}</span>
             </Link>
           );
@@ -80,22 +80,14 @@ const copyright = footerData.data.copyright.replace('{NAME}', SITE_TITLE);
     <div class="pt-10 border-t border-main-1/5 space-y-8">
 
       <div class="flex flex-wrap justify-end gap-6 pt-4">
-          <div class="flex items-center gap-5">
-            {/* Twitter(X) */}
-            <svg class="w-6 h-6 text-white-1/40" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
-            </svg>
-            {/* Instagram */}
-            <svg class="w-6 h-6 text-white-1/40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
-              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-              <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
-            </svg>
-            {/* LINE */}
-            <svg class="w-6 h-6 text-white-1/40" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M24 10.304c0-5.369-5.383-9.738-12-9.738s-12 4.369-12 9.738c0 4.814 4.269 8.846 10.036 9.564.39.084.922.258 1.057.592.12.297.08.764.038 1.066l-.171 1.026c-.052.31-.252 1.214 1.085.661 1.338-.553 7.211-4.25 9.839-7.277 2.062-2.228 3.156-4.574 3.156-6.936zm-15.632 2.54h-1.89v-4.885h.633v4.252h1.257v.633zm1.902 0h-.634v-4.885h.634v4.885zm3.844 0h-.62l-1.954-2.853v2.853h-.634v-4.885h.61l1.964 2.863V7.959h.634v4.885zm2.748-.633h-1.428V10.15h1.341v-.633h-1.341v-1.04h1.428v-.518h-2.061v4.885h2.061v-.518z"/>
-            </svg>
-          </div>
+			<div class="flex items-center gap-8">
+				{/* Twitter(X) */}
+				<i class="fa-brands fa-x-twitter text-2xl text-white-1/60"></i>
+				{/* Instagram */}
+				<i class="fa-brands fa-instagram text-2xl text-white-1/60"></i>
+				{/* LINE */}
+				<i class="fa-brands fa-line text-2xl text-white-1/60"></i>
+			</div>
         </div>
       
       <div>

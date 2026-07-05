@@ -2,16 +2,22 @@
 import { NAV_ITEMS, SITE_TITLE } from '../data/site';
 import * as Lucide from 'lucide-astro';
 import Link from '../components/Link.astro';
+import SectionContainer from './SectionContainer.astro';
+
 const getIcon = (name: string) => {
   return Lucide[name as keyof typeof Lucide];
 };
 ---
 
-<header class="fixed w-full h-20 z-50 bg-white/80 backdrop-blur-sm border-b border-base-1">
-  <div class="flex items-center justify-between max-w-[1440px] mx-auto py-4 h-20">
-    <div class="text-3xl font-serif font-bold text-black-1"><Link href="/">{SITE_TITLE}</Link></div>
+<header class="fixed w-full h-16 md:h-20 z-50 bg-white/80 backdrop-blur-sm border-b border-base-1">
+  <SectionContainer class="relative z-10 h-full">
     
-    <nav class="hidden md:flex gap-8">
+    <div class="flex items-center justify-between w-full h-full">
+      <div class="text-3xl font-serif font-bold text-black-1">
+        <Link href="/">{SITE_TITLE}</Link>
+      </div>
+
+    <nav class="hidden xl:flex gap-8">
       {NAV_ITEMS.map((item) => {
           const Icon = getIcon(item.icon);
           return (
@@ -24,9 +30,9 @@ const getIcon = (name: string) => {
     </nav>
 
     {/* 【魔法のボタン】detailsタグでアコーディオンを実装 */}
-    <details class="md:hidden relative">
+    <details class="xl:hidden relative">
       <summary class="list-none p-2 text-main-1 cursor-pointer">
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
         </svg>
       </summary>
@@ -41,4 +47,5 @@ const getIcon = (name: string) => {
       </div>
     </details>
   </div>
+	</SectionContainer>
 </header>

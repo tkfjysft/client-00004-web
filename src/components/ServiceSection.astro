@@ -9,11 +9,11 @@ if (!serviceData) throw new Error("service.jsonが見つかりません");
 const { title, description, items } = serviceData.data;
 ---
 
-<section class="py-24 bg-white-1">
+<section class="bg-white-1 py-80">
   <SectionContainer>
-    <div class="text-center mb-16 space-y-4">
-      <h2 class="text-4xl md:text-5xl font-serif text-main-1">{title}</h2>
-      <p class="text-xl text-black-1/60 max-w-xl mx-auto">{description}</p>
+    <div class="mb-16 space-y-4">
+      <h2 class="text-4xl md:text-5xl font-serif text-main-1 text-center">{title}</h2>
+      <p class="text-xl text-black-1/60 max-w-xl mx-auto text-left">{description}</p>
     </div>
 
     <div class="grid md:grid-cols-3 gap-8">
