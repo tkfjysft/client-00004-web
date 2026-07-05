@@ -1,11 +1,10 @@
 ---
 import { getEntry } from 'astro:content';
 import { Image } from 'astro:assets';
-import Link from '../components/Link.astro';
 import heroImage from '../assets/images/hero.webp';
 
 const heroData = (await getEntry('home', 'hero'))!;
-const { heroTitle_A, heroTitle_B, heroSub, heroDescription, buttonText } = heroData.data;
+const { heroTitle, heroSub, heroDescription, buttonText } = heroData.data;
 ---
 
 <section class="relative w-full h-screen flex items-center justify-center px-6 py-12 bg-base-1 overflow-hidden">
@@ -22,15 +21,15 @@ const { heroTitle_A, heroTitle_B, heroSub, heroDescription, buttonText } = heroD
     <div class="flex-1 space-y-8">
       <div class="space-y-4">
         <p class="text-main-1 font-serif tracking-widest uppercase text-base font-semibold">{heroSub}</p>
-        <h1 class="text-4xl md:text-6xl font-serif leading-[1.2] text-black-1">{heroTitle_A}<span class="text-[40px]" set:html={heroTitle_B} /></h1>
+        <h1 class="text-4xl md:text-6xl font-serif leading-[1.2] text-black-1" set:html={heroTitle} />
       </div>
       
       <div class="text-black-1/80 leading-relaxed max-w-md" set:html={heroDescription} />
       
       <div class="pt-4">
-        <Link href="/contact" class="inline-flex items-center bg-main-1 text-white px-10 py-4 rounded-full shadow-lg hover:shadow-main-1/20 transition-all hover:-translate-y-1">
+        <a href="/contact" class="inline-flex items-center bg-main-1 text-white px-10 py-4 rounded-full shadow-lg hover:shadow-main-1/20 transition-all hover:-translate-y-1">
           {buttonText}
-        </Link>
+        </a>
       </div>
     </div>
 
